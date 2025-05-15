@@ -5,6 +5,8 @@ import CatFoodForm from "./components/CatFoodForm"
 import Buttons from "./components/Buttons"
 import FoodItem, { CatFoodEntry } from "./components/FoodItem"
 import { useEffect, useState } from "react"
+import luna_pic from "../public/images/luna_pic.jpg"
+import persimmons_pic from "../public/images/persimmons_pic.jpg"
 const STORAGE_KEY = "catFoodEntries"
 
 export default function Home() {
@@ -44,10 +46,24 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <div>
-        <Image width={400} height={400} alt="cat" src="/images/Luna.jpg" />
+    <div className="flex flex-col items-center px-4 py-8 space-y-8">
+      {/* Top layout with images and form */}
+      <div className="flex flex-row items-center justify-center gap-6 flex-wrap">
+        <Image
+          src={luna_pic}
+          alt="Luna"
+          width={200}
+          height={200}
+          className="rounded-xl shadow-md"
+        />
         <CatFoodForm onAddFood={addFood} />
+        <Image
+          src={persimmons_pic}
+          alt="Purrsimmons"
+          width={200}
+          height={200}
+          className="rounded-xl shadow-md"
+        />
       </div>
       <Buttons filter={filter} setFilter={setFilter} />
       {entries.map((x) => {
