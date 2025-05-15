@@ -45,7 +45,10 @@ export default function Home() {
 
   return (
     <div>
-      <CatFoodForm onAddFood={addFood} />
+      <div>
+        <Image width={400} height={400} alt="cat" src="/images/Luna.jpg" />
+        <CatFoodForm onAddFood={addFood} />
+      </div>
       <Buttons filter={filter} setFilter={setFilter} />
       {entries.map((x) => {
         if (filter === x.rating) {

@@ -11,12 +11,14 @@ export default function FoodItem({
   rating,
   dateTried,
 }: CatFoodEntry) {
+  const color = cat == "Purrsimmons" ? "#e6971f" : "gray"
   return (
     <div>
       <h2>Food Items</h2>
       {
         <div
           style={{
+            backgroundColor: color,
             border: "1px solid #ccc",
             padding: "10px",
             marginBottom: "8px",
